@@ -1,21 +1,58 @@
-body{
-    background-color: darkorchid;
+/* Structure de la grille pour le contenu principal */
+main {
+    display: grid;
+    grid-template-areas: 
+        "hp"
+        "tp"
+        "ip"
+        "dp"
+        "fp";
+    height: auto;
+    width: auto;
 }
+
+/* Définition des sections de la grille */
+#header {
+    grid-area: hp;
+}
+#texteport {
+    grid-area: tp;
+}
+#imageport {
+    grid-area: ip;
+}
+#defprojet {
+    grid-area: dp;
+}
+#form {
+    grid-area: fp;
+}
+
+/* Styles pour le corps de la page */
+body {
+    background-color: darkorchid;
+    cursor: url(media/pointe.cur), auto;
+}
+
+/* Styles pour les titres */
 h1 {
-    left: 50%;
-    right: 50%;
     color: aqua;
     font-size: xx-large;
-}
-h3 {
-    color: burlywood;
+    text-align: center;
 }
 h2 {
     color: chartreuse;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 150px;
- }
- #background-video {
+    font-size: large;
+    text-align: center;
+}
+h3 {
+    color: burlywood;
+    text-align: center;
+}
+
+/* Style pour la vidéo de fond */
+#background-video {
     width: 100vw;
     height: 100vh;
     object-fit: cover;
@@ -26,47 +63,48 @@ h2 {
     bottom: 0;
     z-index: -1;
     display: flex;
- }
- div {
-    cursor:url(pointe.cur),auto;
 }
+
+/* Style pour les images */
 img {
-    display: block;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        width: auto;
-}
-#pres  {
-    margin-left: 35%;
-    margin-right: 35%;
+    display: flex;
+    margin: 10px auto;
+    width: auto;
 }
 
+/* Style pour le texte centré */
+#pres {
+    margin: 0 35%;
+}
 
- #enbleu {
-    
+/* Style pour l'élément avec ombre portée */
+#enbleu {
     text-align: center;
-    text-shadow: 4px 4px rgb(23, 173, 35) ;
+    text-shadow: 4px 4px rgb(23, 173, 35);
 }
+
+/* Grille pour les images dans le portfolio */
 #container {
     display: grid;
-    align-items: center; 
+    align-items: center;
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: 1px;
 }
 
-
+/* Styles pour les petits écrans */
 @media (max-width: 750px) {
     #background-video {
-       display: none;
+        display: none;
     } 
     body {
-       background: url("https://assets.codepen.io/6093409/river.jpg") no-repeat;
-       background-size: cover;
+        background: url("https://assets.codepen.io/6093409/river.jpg") no-repeat;
+        background-size: cover;
     }
     img {
         width: 100%;
         height: auto;
     }
- }
+    text { 
+        text-size-adjust: 1;
+    }
+}
